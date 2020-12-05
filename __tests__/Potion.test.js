@@ -1,5 +1,6 @@
 const Potion = require('../lib/Potion.js');
 
+// test to ensure Potion object has name and value
 test('creates a health potion object', () => {
   const potion = new Potion('health');
 
@@ -7,6 +8,7 @@ test('creates a health potion object', () => {
   expect(potion.value).toEqual(expect.any(Number));
 });
 
+// test that random potion is created with name and value properties of correct type
 test('creates a random potion object', () => {
   const potion = new Potion();
 

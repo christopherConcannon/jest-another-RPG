@@ -3,6 +3,7 @@ const Potion = require('../lib/Potion.js');
 
 jest.mock('../lib/Potion.js');
 
+// check for proper Enemy object creation
 test('creates an enemy object', () => {
   const enemy = new Enemy('goblin', 'sword');
 
@@ -14,12 +15,13 @@ test('creates an enemy object', () => {
   expect(enemy.potion).toEqual(expect.any(Object));
 });
 
+// ditto Player tests
 test("gets enemy's health value", () => {
   const enemy = new Enemy('goblin', 'sword');
 
   expect(enemy.getHealth()).toEqual(expect.stringContaining(enemy.health.toString()));
 })
-
+// ditto Player tests
 test('checks if enemy is alive or not', () => {
   const enemy = new Enemy('goblin', 'sword');
 
@@ -29,7 +31,7 @@ test('checks if enemy is alive or not', () => {
    
   expect(enemy.isAlive()).toBeFalsy();
 })
-
+// ditto Player tests
 test("gets enemy's attack value", () => {
   const enemy = new Enemy('goblin', 'sword');
   enemy.strength = 10;
@@ -37,7 +39,7 @@ test("gets enemy's attack value", () => {
   expect(enemy.getAttackValue()).toBeGreaterThanOrEqual(5);
   expect(enemy.getAttackValue()).toBeLessThanOrEqual(15);
 });
-
+// ditto Player tests
 test("subtracts from enemy's health", () => {
   const enemy = new Enemy('goblin', 'sword');
   const oldHealth = enemy.health;
@@ -51,6 +53,7 @@ test("subtracts from enemy's health", () => {
   expect(enemy.health).toBe(0);
 })
 
+// check getDescription method returns string with proper values
 test('gets a description of the enemy', () => {
   const enemy = new Enemy('goblin', 'sword');
 
